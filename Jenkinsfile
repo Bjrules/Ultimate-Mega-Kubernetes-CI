@@ -97,72 +97,79 @@ pipeline {
             }
         }
         
-        // stage('Update Manifest File in Mega-Project-CD') {
-        //     steps {
-        //         script {
-        //             // Clean workspace before starting
-        //             cleanWs()
+        stage('Update Manifest File in Mega-Project-CD') {
+            steps {
+                script {
+                    // Clean workspace before starting
+                    cleanWs()
 
-        //             withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
-        //                 sh '''
-        //                     # Clone the Mega-Project-CD repository
-        //                     git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/jaiswaladi246/Mega-Project-CD.git
+                    withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
+                        sh '''
+                            # Clone the Mega-Project-CD repository
+                            git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/jaiswaladi246/Mega-Project-CD.git
                             
-        //                     # Update the image tag in the manifest.yaml file
-        //                     cd Mega-Project-CD
-        //                     sed -i "s|adijaiswal/bankapp:.*|adijaiswal/bankapp:${IMAGE_TAG}|" Manifest/manifest.yaml
+                            # Update the image tag in the manifest.yaml file
+                            cd Mega-Project-CD
+                            sed -i "s|adijaiswal/bankapp:.*|adijaiswal/bankapp:${IMAGE_TAG}|" Manifest/manifest.yaml
                             
-        //                     # Confirm changes
-        //                     echo "Updated manifest file contents:"
-        //                     cat Manifest/manifest.yaml
+                            # Confirm changes
+                            echo "Updated manifest file contents:"
+                            cat Manifest/manifest.yaml
                             
-        //                     # Commit and push the changes
-        //                     git config user.name "Jenkins"
-        //                     git config user.email "jenkins@example.com"
-        //                     git add Manifest/manifest.yaml
-        //                     git commit -m "Update image tag to ${IMAGE_TAG}"
-        //                     git push origin main
-        //                 '''
-        //             }
-        //         }
-        //     }
+                            # Commit and push the changes
+                            git config user.name "Jenkins"
+                            git config user.email "jenkins@example.com"
+                            git add Manifest/manifest.yaml
+                            git commit -m "Update image tag to ${IMAGE_TAG}"
+                            git push origin main
+                        '''
+                    }
+                }
+            }
+        }
+    
+
+        }
+    
+
+    
+    
+    
+post {
+    always {
+        script {
+            def jobName = env.JOB_NAME
+            def buildNumber = env.BUILD_NUMBER
+            def pipelineStatus = currentBuild.result ?: 'UNKNOWN'
+            def bannerColor = pipelineStatus.toUpperCase() == 'SUCCESS' ? 'green' : 'red'
+
+            def body = """
+                <html>
+                <body>
+                <div style="border: 4px solid ${bannerColor}; padding: 10px;">
+                <h2>${jobName} - Build ${buildNumber}</h2>
+                <div style="background-color: ${bannerColor}; padding: 10px;">
+                <h3 style="color: white;">Pipeline Status: ${pipelineStatus.toUpperCase()}</h3>
+                </div>
+                <p>Check the <a href="${BUILD_URL}">console output</a>.</p>
+                </div>
+                </body>
+                </html>
+            """
+
+            emailext (
+                subject: "${jobName} - Build ${buildNumber} - ${pipelineStatus.toUpperCase()}",
+                body: body,
+                to: '567adddi.jais@gmail.com',
+                from: 'jenkins@devopsshack.com',
+                replyTo: 'jenkins@devopsshack.com',
+                mimeType: 'text/html',
+               
+            )
         }
     }
-    
-    
-    
-// post {
-//     always {
-//         script {
-//             def jobName = env.JOB_NAME
-//             def buildNumber = env.BUILD_NUMBER
-//             def pipelineStatus = currentBuild.result ?: 'UNKNOWN'
-//             def bannerColor = pipelineStatus.toUpperCase() == 'SUCCESS' ? 'green' : 'red'
 
-//             def body = """
-//                 <html>
-//                 <body>
-//                 <div style="border: 4px solid ${bannerColor}; padding: 10px;">
-//                 <h2>${jobName} - Build ${buildNumber}</h2>
-//                 <div style="background-color: ${bannerColor}; padding: 10px;">
-//                 <h3 style="color: white;">Pipeline Status: ${pipelineStatus.toUpperCase()}</h3>
-//                 </div>
-//                 <p>Check the <a href="${BUILD_URL}">console output</a>.</p>
-//                 </div>
-//                 </body>
-//                 </html>
-//             """
+}
 
-//             emailext (
-//                 subject: "${jobName} - Build ${buildNumber} - ${pipelineStatus.toUpperCase()}",
-//                 body: body,
-//                 to: '567adddi.jais@gmail.com',
-//                 from: 'jenkins@devopsshack.com',
-//                 replyTo: 'jenkins@devopsshack.com',
-//                 mimeType: 'text/html',
-               
-//             )
-//         }
-//     }
-
+ }
 
