@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'githubpass', url: 'https://github.com/Bjrules/Ultimate-Mega-Kubernetes-CICD.git'
+                git branch: 'main', credentialsId: 'githubpass', url: 'https://github.com/Bjrules/Ultimate-Mega-Kubernetes-CI.git'
             }
         }
         
