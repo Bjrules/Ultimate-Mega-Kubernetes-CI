@@ -103,7 +103,7 @@ pipeline {
                     // Clean workspace before starting
                     cleanWs()
 
-                    withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
+                    withCredentials([usernamePassword(credentialsId: 'githubpass', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
                         sh '''
                             # Clone the Mega-Project-CD repository
                             git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Bjrules/Ultimate-Mega-Kubernetes-CD.git
