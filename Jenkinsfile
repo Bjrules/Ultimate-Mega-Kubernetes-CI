@@ -8,7 +8,7 @@ pipeline {
     
     environment {
         SCANNER_HOME = tool 'sonar-scanner' // sonar-scanner configured in the tools section of jenkins
-        IMAGE_TAG = "v${BUILD_NUMBER}"
+       // IMAGE_TAG = "v${BUILD_NUMBER}"
     }
 
     stages {
