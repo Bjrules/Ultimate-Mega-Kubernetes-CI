@@ -8,7 +8,7 @@ pipeline {
     
     environment {
         SCANNER_HOME = tool 'sonar-scanner' // sonar-scanner configured in the tools section of jenkins
-       // IMAGE_TAG = "v${BUILD_NUMBER}"
+        IMAGE_TAG = "v${BUILD_NUMBER}"
     }
 
     stages {
@@ -71,63 +71,64 @@ pipeline {
             }
         }
         
-//         stage('Docker Image Build & Tag') {
-//             steps {
-//                 script {
-//                     withDockerRegistry(credentialsId: 'docker-cred') {
-//                         sh "docker build -t adijaiswal/bankapp:$IMAGE_TAG ."
-//                     }
-//                 }
-//             }
-//         }
+        stage('Docker Image Build & Tag') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'dockerhub') {
+                        sh "docker build -t bjrules/bankapp:$IMAGE_TAG ."
+                    }
+                }
+            }
+        }
         
-//         stage('Scan Image') {
-//             steps {
-//                 sh "trivy image --format table -o image-report.html adijaiswal/bankapp:$IMAGE_TAG"
-//             }
-//         }
+        stage('Scan Image') {
+            steps {
+                sh "trivy image --format table -o image-report.html bjrules/bankapp:$IMAGE_TAG"
+            }
+        }
         
-//         stage('Push Docker Image') {
-//             steps {
-//                 script {
-//                     withDockerRegistry(credentialsId: 'docker-cred') {
-//                         sh "docker push adijaiswal/bankapp:$IMAGE_TAG"
-//                     }
-//                 }
-//             }
-//         }
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'dockerhub') {
+                        sh "docker push bjrules/bankapp:$IMAGE_TAG"
+                    }
+                }
+            }
+        }
         
-//         stage('Update Manifest File in Mega-Project-CD') {
-//             steps {
-//                 script {
-//                     // Clean workspace before starting
-//                     cleanWs()
+        // stage('Update Manifest File in Mega-Project-CD') {
+        //     steps {
+        //         script {
+        //             // Clean workspace before starting
+        //             cleanWs()
 
-//                     withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
-//                         sh '''
-//                             # Clone the Mega-Project-CD repository
-//                             git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/jaiswaladi246/Mega-Project-CD.git
+        //             withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
+        //                 sh '''
+        //                     # Clone the Mega-Project-CD repository
+        //                     git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/jaiswaladi246/Mega-Project-CD.git
                             
-//                             # Update the image tag in the manifest.yaml file
-//                             cd Mega-Project-CD
-//                             sed -i "s|adijaiswal/bankapp:.*|adijaiswal/bankapp:${IMAGE_TAG}|" Manifest/manifest.yaml
+        //                     # Update the image tag in the manifest.yaml file
+        //                     cd Mega-Project-CD
+        //                     sed -i "s|adijaiswal/bankapp:.*|adijaiswal/bankapp:${IMAGE_TAG}|" Manifest/manifest.yaml
                             
-//                             # Confirm changes
-//                             echo "Updated manifest file contents:"
-//                             cat Manifest/manifest.yaml
+        //                     # Confirm changes
+        //                     echo "Updated manifest file contents:"
+        //                     cat Manifest/manifest.yaml
                             
-//                             # Commit and push the changes
-//                             git config user.name "Jenkins"
-//                             git config user.email "jenkins@example.com"
-//                             git add Manifest/manifest.yaml
-//                             git commit -m "Update image tag to ${IMAGE_TAG}"
-//                             git push origin main
-//                         '''
-//                     }
-//                 }
-//             }
-//         }
-//     }
+        //                     # Commit and push the changes
+        //                     git config user.name "Jenkins"
+        //                     git config user.email "jenkins@example.com"
+        //                     git add Manifest/manifest.yaml
+        //                     git commit -m "Update image tag to ${IMAGE_TAG}"
+        //                     git push origin main
+        //                 '''
+        //             }
+        //         }
+        //     }
+        }
+    }
+    
     
     
 // post {
@@ -163,6 +164,5 @@ pipeline {
 //             )
 //         }
 //     }
- }
 
-}
+
