@@ -48,7 +48,7 @@ pipeline {
                 }
             }
         }
-        
+        // perform QualityGate Check
         stage('Quality Gate Check') {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
