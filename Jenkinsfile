@@ -1,7 +1,7 @@
 pipeline {
     agent any
     // whenever a tool is installed via plugin in jenkins then it has to be defined in the tools block of the pipeline e.g maven
-    //else it can be used directly using the sh command.
+    //but if it was installed directly via the terminal then, it can be used directly using the sh command.
     tools {
         maven 'maven3'
     }
