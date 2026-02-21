@@ -8,7 +8,7 @@ pipeline {
     }
     
     environment {
-        SCANNER_HOME = tool 'sonarqube-scanner' // Sonarqube-Scanner configured in the tools section of jenkins
+        SCANNER_HOME = tool 'sonar-scanner' // Sonarqube-Scanner configured in the tools section of jenkins
         IMAGE_TAG = "v${BUILD_NUMBER}"
     }
 
@@ -41,7 +41,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonarq') {
                     sh '''
-                        $SCANNER_HOME/bin/sonarqube-scanner \
+                        $SCANNER_HOME/bin/sonar-scanner \
                         -Dsonar.projectKey=gcbank \
                         -Dsonar.projectName=gcbank \
                         -Dsonar.java.binaries=target
