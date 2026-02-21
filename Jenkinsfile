@@ -4,7 +4,7 @@ pipeline {
     // and defined in the tools block of the pipeline e.g maven
     //but if it was installed directly via the terminal then, it can be used directly using the sh command.
     tools {
-        maven 'maven3'
+        maven 'Maven3'
     }
     
     environment {
