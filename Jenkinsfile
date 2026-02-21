@@ -8,7 +8,7 @@ pipeline {
     }
     
     environment {
-        SCANNER_HOME = tool 'sonarqube-scanner' // Sonarq-Scanner configured in the tools section of jenkins
+        SCANNER_HOME = tool 'sonarqube-scanner' // Sonarqube-Scanner configured in the tools section of jenkins
         IMAGE_TAG = "v${BUILD_NUMBER}"
     }
 
