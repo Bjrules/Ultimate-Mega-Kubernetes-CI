@@ -66,16 +66,16 @@ pipeline {
         
         stage('Publish To Nexus') {
             steps {
-                withMaven(globalMavenSettingsConfig: 'BB-WESTERN', maven: 'maven3', traceability: true) {
+                withMaven(globalMavenSettingsConfig: 'BB-project', maven: 'Maven3', traceability: true) {
                         sh "mvn deploy"
-}
+                }
             }
         }
         
         stage('Docker Image Build & Tag') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'dockerhub') {
+                    withDockerRegistry(credentialsId: 'Docker-Cred') {
                         sh "docker build -t bjrules/bankapp:$IMAGE_TAG ."
                     }
                 }
@@ -91,7 +91,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'dockerhub') {
+                    withDockerRegistry(credentialsId: 'Docker-Cred') {
                         sh "docker push bjrules/bankapp:$IMAGE_TAG"
                     }
                 }
