@@ -41,7 +41,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonarq') {
                     sh '''
-                        $SCANNER_HOME/bin/sonar-scanner \
+                        $SCANNER_HOME/bin/sonarq-scanner \
                         -Dsonar.projectKey=gcbank \
                         -Dsonar.projectName=gcbank \
                         -Dsonar.java.binaries=target
