@@ -41,7 +41,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonarq') {
                     sh '''
-                        $SCANNER_HOME/bin/sonarq-scanner \
+                        $SCANNER_HOME/bin/Sonarq-Scanner \
                         -Dsonar.projectKey=gcbank \
                         -Dsonar.projectName=gcbank \
                         -Dsonar.java.binaries=target
@@ -53,7 +53,7 @@ pipeline {
         stage('Quality Gate Check') {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
-                    waitForQualityGate abortPipeline: false, credentialsId: 'sonarqube'
+                    waitForQualityGate abortPipeline: false, credentialsId: 'Sonar-Token'
                 }
             }
         }
