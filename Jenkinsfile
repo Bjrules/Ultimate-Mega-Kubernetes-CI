@@ -8,14 +8,14 @@ pipeline {
     }
     
     environment {
-        SCANNER_HOME = tool 'sonar-scanner' // sonar-scanner configured in the tools section of jenkins
+        SCANNER_HOME = tool 'sonarq-scanner' // sonar-scanner configured in the tools section of jenkins
         IMAGE_TAG = "v${BUILD_NUMBER}"
     }
 
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'githubpass', url: 'https://github.com/Bjrules/Ultimate-Mega-Kubernetes-CI.git'
+                git branch: 'main', credentialsId: 'GitHub-Access', url: 'https://github.com/Bjrules/Ultimate-Mega-Kubernetes-CI.git'
             }
         }
         
