@@ -1,4 +1,4 @@
-# Ultimate-Mega-Kubernetes-CICD
+# Ultimate-Mega-Kubernetes-CI
 
 
 get your apppassword here.
