@@ -1,4 +1,5 @@
 # Ultimate-Mega-Kubernetes-CI
+# End to End Project, kind see the Ultimate-Mega-Kubernetes-CD for the Deployment phase
 
 
 get your apppassword here.
