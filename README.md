@@ -2,7 +2,7 @@
 # End to End Project, kind see the Ultimate-Mega-Kubernetes-CD for the Deployment phase
 
 
-get your apppassword here.
+get your app password here.
 https://myaccount.google.com/apppasswords
 
 
@@ -13,4 +13,4 @@ http://54.234.122.198:8080/generic-webhook-trigger/invoke?token=jenkinswebhook
 
 docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
 
-full Documentation coming soon..
+Full Documentation coming soon..
