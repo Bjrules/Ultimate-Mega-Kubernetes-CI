@@ -79,7 +79,7 @@ kubectl version --client
 ## 5) Generate kubeconfig for EKS
 
 ```bash
-aws eks --region ap-south-1 update-kubeconfig --name devopsshack-cluster
+aws eks --region us-east-1 update-kubeconfig --name bb-cluster
 
 # Quick check (may take a minute after cluster creation)
 kubectl get nodes
