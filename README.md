@@ -20,7 +20,8 @@ sudo usermod -aG docker $USER
 newgrp docker
 
 ### On Jenkins, after installing docker on the jenkins machine ensure you are runing commands as jenkins user and not as ubuntu user. 
-sudo usermod -aG docker jenkin
+sudo usermod -aG docker jenkins
 newgrp docker
+Restart jenkins server using http://jenkins-ip:8080/restart to effect changes
 
 Full Documentation coming soon..
