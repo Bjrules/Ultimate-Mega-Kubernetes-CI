@@ -76,7 +76,7 @@ kubectl version --client
 
 ---
 
-## 5) Generate kubeconfig for EKS
+## 5) Generate kubeconfig for EKS so as to be able to connect and control the Eks cluster on AWS
 
 ```bash
 aws eks --region us-east-1 update-kubeconfig --name bb-cluster
