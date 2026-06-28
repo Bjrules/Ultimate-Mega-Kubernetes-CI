@@ -1,8 +1,8 @@
 # EKS Bootstrap Guide (AWS CLI, Terraform, kubectl, Ingress‑NGINX, cert‑manager)
 
 **Tested on**: Ubuntu 24.04
-**Region**: `ap-south-1`
-**Cluster name**: `devopsshack-cluster`
+**Region**: `us-east-1`
+**Cluster name**: `bb-cluster`
 
 ---
 
