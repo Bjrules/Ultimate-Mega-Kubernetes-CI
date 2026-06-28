@@ -19,4 +19,8 @@ docker run -d --name nexus3 -p 8081:8081 sonatype/nexus3
 sudo usermod -aG docker $USER
 newgrp docker
 
+### On Jenkins, after installing docker on the jenkins machine ensure you are runing commands as jenkins user and not as ubuntu user. 
+sudo usermod -aG docker jenkin
+newgrp docker
+
 Full Documentation coming soon..
