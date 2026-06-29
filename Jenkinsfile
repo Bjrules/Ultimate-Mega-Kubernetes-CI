@@ -50,9 +50,9 @@ pipeline {
             }
         }
 // Perform QualityGate Check
-// To perform Qualitygate firstly make sure that you had configure and create webhook in SonarQube server using jenkins URL (see sceenshots)
+// To perform QualityGate, firstly make sure that you had configure and create webhook in SonarQube server using jenkins URL (see sceenshots)
         stage('Quality Gate Check') {
-            steps {
+            steps { 
                 timeout(time: 1, unit: 'HOURS') {
                     waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
                 }
