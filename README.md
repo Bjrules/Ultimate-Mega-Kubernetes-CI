@@ -6,8 +6,9 @@
 ---
 
 ## Step1.  Setup Jenkins for (CI Pipeline) and Infrastructure-Server (for Kubernetes Deployments) 
- 1. Infra-Server
-#### Install AWS CLI
+### Infra-Server
+
+1. Install AWS CLI
 ```
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 sudo apt install unzip
