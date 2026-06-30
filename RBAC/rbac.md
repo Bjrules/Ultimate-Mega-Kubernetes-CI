@@ -7,7 +7,7 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: jenkins
+  name: jenkins-sa
   namespace: webapps
 ```
 
@@ -159,9 +159,9 @@ subjects:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: secret-sa-sample
+  name: jenkins-sa-secret
   annotations:
-    kubernetes.io/service-account.name: "sa-name"
+    kubernetes.io/service-account.name: "jenkins-sa"
 type: kubernetes.io/service-account-token
 
 ```
