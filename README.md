@@ -1,6 +1,6 @@
 # Ultimate-Mega-Kubernetes-CI
-> Project Description:
-End to End Project , kind see the Ultimate-Mega-Kubernetes-CD for the Deployment phase
+## Project Description:
+>End to End Project , kind see the Ultimate-Mega-Kubernetes-CD for the Deployment phase
 
 
 get your app password here.
