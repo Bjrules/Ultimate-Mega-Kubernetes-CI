@@ -1,6 +1,6 @@
 # Ultimate-Mega-Kubernetes-CI
 ## Project Description:
->End to End Project , kind see the Ultimate-Mega-Kubernetes-CD for the Deployment phase
+>This Project implements an End-2-End DevSecOps Automated CI/CD(jenkins) kubernetes Deployment which is a Java Application(Bank App). It clones, compiles, tests, Performs Security Scanning(trivy) as well as generates reports. It also Scan for bugs and vulnerability using SonarQube and performs QualityGate Check for the purpose of Quality of the Software. It further packages and Deploy the artifacts to nexus server which has been preconfigured in jenkins. furthermore, it builds and push to dockerhub with dynamic tagging. another Interesting part is that, This project also updates the CD Repository [https://github.com/Bjrules/Ultimate-Mega-Kubernetes-CD.git] with the latest build tag Number on github for latest Deployment in . Finally it sends a Email on each build whether SUCCEFUL or FAILED BUILDS.
 
 
 get your app password here.
