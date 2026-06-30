@@ -5,7 +5,7 @@
 ![alt text](Mega-Project-CICD.drawio.png)
 ---
 
-## Step1.  Setup Jenkins for (CI Pipeline) and Infrastructure-Server (for Kubernetes Deployments) 
+## Step1.  Setup Jenkins-Server for (CI Pipeline) and Infrastructure-Server (for Kubernetes Deployments) 
 ### Infra-Server
 
 1. Install AWS CLI
@@ -33,6 +33,7 @@ terraform -version
 ```
 ---
 3. Install kubectl
+```
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
@@ -40,7 +41,7 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 kubectl version --client
-
+```
 #chmod +x kubectl
 #mkdir -p ~/.local/bin
 #mv ./kubectl ~/.local/bin/kubectl
