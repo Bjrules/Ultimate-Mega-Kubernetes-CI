@@ -6,7 +6,7 @@
 ---
 
 ## Step1.  Setup Jenkins-Server for (CI Pipeline) and Infrastructure-Server (for Kubernetes Deployments) 
-### Infra-Server
+### Infra-Server Set-Up
 
 1. Install AWS CLI
 ```
@@ -69,6 +69,13 @@ tar -zxvf helm-v3.14.0-linux-amd64.tar.gz
 sudo mv linux-amd64/helm /usr/local/bin/helm
 helm version
 ```
+### Jenkins-Server Set-Up
+All these can be gotten via their official web portal
+- [x] install JDK
+- [x] Install Jenkins
+- [x] Install Docker
+- [x] Install Trivy
+- [x] Install kubectl as provided above
 
 
 
