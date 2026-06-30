@@ -42,7 +42,7 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 kubectl version --client
 ```
-#chmod +x kubectl
+>#chmod +x kubectl
 #mkdir -p ~/.local/bin
 #mv ./kubectl ~/.local/bin/kubectl
 # and then append (or prepend) ~/.local/bin to $PATH
