@@ -15,8 +15,8 @@ sudo ./aws/install
 aws configure
 ---
 2. Install Terraform
-`
-sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+
+``` sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
 
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
 
@@ -24,8 +24,7 @@ echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://
 
 sudo apt-get update && sudo apt-get install terraform -y
 
-terraform -version 
-`
+terraform -version ```
 ---
 3. Install kubectl
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
