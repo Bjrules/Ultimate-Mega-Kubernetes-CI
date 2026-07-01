@@ -77,7 +77,7 @@ All these can be gotten via their official web portal
 - [x] Install Trivy
 - [x] Install kubectl as provided above
 
-### plugins required in jenkins for this project
+> plugins required in jenkins for this project
 1. Generic Webhook Trigger
 2. Blue ocean
 3. Pipeline Stage view
