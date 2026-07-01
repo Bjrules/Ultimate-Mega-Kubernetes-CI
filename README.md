@@ -118,4 +118,3 @@ Restart jenkins server using http://jenkins-ip:8080/restart to effect changes
 
 
 
-Full Documentation coming soon..
