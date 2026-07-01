@@ -78,8 +78,8 @@ All these can be gotten via their official web portal
 - [x] Install kubectl as provided above
 
 > plugins required in jenkins for this project
-1. Generic Webhook Trigger
-2. Blue ocean
+    1. Generic Webhook Trigger
+    2. Blue ocean
 3. Pipeline Stage view
 4. SonarQube Scanner
 5. Docker Pipeline
