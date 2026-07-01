@@ -69,13 +69,24 @@ tar -zxvf helm-v3.14.0-linux-amd64.tar.gz
 sudo mv linux-amd64/helm /usr/local/bin/helm
 helm version
 ```
-### Jenkins-Server Set-Up
+### Jenkins-Server SetUp
 All these can be gotten via their official web portal
 - [x] install JDK
 - [x] Install Jenkins
 - [x] Install Docker
 - [x] Install Trivy
 - [x] Install kubectl as provided above
+
+### plugins required in jenkins for this project
+1. Generic Webhook Trigger
+2. Blue ocean
+3. Pipeline Stage view
+4. SonarQube Scanner
+5. Docker Pipeline
+6. Kubernetes CLI
+7. Config File Provider
+8. Maven Integration
+9. Pipeline Maven integration
 
 
 
@@ -103,16 +114,7 @@ sudo usermod -aG docker jenkins
 newgrp docker
 Restart jenkins server using http://jenkins-ip:8080/restart to effect changes
 
-### plugins required in jenkins for this project
-1. Generic Webhook Trigger
-2. Blue ocean
-3. Pipeline Stage view
-4. SonarQube Scanner
-5. Docker Pipeline
-6. Kubernetes CLI
-7. Config File Provider
-8. Maven Integration
-9. Pipeline Maven integration
+
 
 
 
