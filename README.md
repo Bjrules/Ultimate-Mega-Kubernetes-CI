@@ -72,7 +72,7 @@ helm version
 ---
 ### Jenkins-Server SetUp
 All these can be gotten via their official web portal
-- [x] install JDK
+- [x] install JDK as a prerequisite to installing jenkins
 - [x] Install Jenkins
 - [x] Install Docker
 - [x] Install Trivy
@@ -115,7 +115,9 @@ docker run -d --name nexus3 -p 8081:8081 sonatype/nexus3
 sudo usermod -aG docker $USER
 newgrp docker
 ```
-see ScreenShots
+See Screenshots
+>Opened ports in Inboud Rules of Security Group
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_193603.png)
 
 
 
