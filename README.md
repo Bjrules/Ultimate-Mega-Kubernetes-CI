@@ -122,10 +122,18 @@ See Screenshots
 >Opened ports in Inboud Rules of Security Group
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_193603.png)
 
->Create an IAM Access key for aws configure
+>Create an IAM Access key for aws configure on infra-server
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_202542.png)
 
-![alt text](Screenshot_20260220_202958.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_202958.png)
+
+> Installed Docker and pull/run Docker Image/Container of both Nexus and Sonarqube on their respective Machines.
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_210915.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_211309.png)
+> getting the password for Nexus by logging into the container 
+``` docker exex -it container_id /bin/bash ```
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_212018.png)
+
 
 
 
