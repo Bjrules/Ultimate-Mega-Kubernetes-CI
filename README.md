@@ -74,12 +74,13 @@ helm version
 All these can be gotten via their official web portal
 - [x] install JDK as a prerequisite to installing jenkins
 - [x] Install Jenkins
-- [x] Install Docker
+- [x] Install Docker [install docker on ubuntu](https://docs.docker.com/engine/install/ubunty)
 - [x] Install Trivy
 - [x] Install kubectl as provided above
 
  On Jenkins Machine, after installing docker on the jenkins machine ensure you are runing commands as jenkins user and not as ubuntu user.
  ```
+
 sudo usermod -aG docker jenkins
 newgrp docker
 Restart jenkins server using http://jenkins-ip:8080/restart to effect changes
@@ -121,9 +122,11 @@ See Screenshots
 >Opened ports in Inboud Rules of Security Group
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_193603.png)
 
->create and IAM Access key for aws configure
+>Create an IAM Access key for aws configure
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_202542.png)
+
 ![alt text](Screenshot_20260220_202958.png)
+
 
 
 
