@@ -75,7 +75,7 @@ All these can be gotten via their official web portal
 - [x] install JDK as a prerequisite to installing jenkins
 - [x] Install Jenkins
 - [x] Install Docker [install docker on ubuntu](https://docs.docker.com/engine/install/ubuntu)
-- [x] Install Trivy
+- [x] Install Trivy [Install trivy ](https://trivy.dev/docs/latest/getting-started/installation)
 - [x] Install kubectl as provided above
 
  On Jenkins Machine, after installing docker on the jenkins machine ensure you are runing commands as jenkins user and not as ubuntu user.
@@ -130,9 +130,16 @@ See Screenshots
 > Installed Docker and pull/run Docker Image/Container of both Nexus and Sonarqube on their respective Machines.
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_210915.png)
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_211309.png)
-> getting the password for Nexus by logging into the container 
+> Getting the password for Nexus by logging into the container 
 ``` docker exex -it container_id /bin/bash ```
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_212018.png)
+
+#### Nexus and SonarQube Interfaces (sonarqubedefault username and password admin:admin)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_212144.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_212249.png)
+
+#### installation of Docker on jenkins Machine
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_213126.png)
 
 
 
