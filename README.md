@@ -121,6 +121,8 @@ See Screenshots
 >Opened ports in Inboud Rules of Security Group
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_193603.png)
 
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_202542.png)
+![alt text](Screenshot_20260220_202958.png)
 
 
 
