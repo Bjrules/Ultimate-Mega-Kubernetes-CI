@@ -116,6 +116,8 @@ sudo usermod -aG docker $USER
 newgrp docker
 ```
 See Screenshots
+> EC2 Instances
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_195549.png)
 >Opened ports in Inboud Rules of Security Group
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_193603.png)
 
