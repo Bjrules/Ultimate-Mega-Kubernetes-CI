@@ -74,7 +74,7 @@ helm version
 All these can be gotten via their official web portal
 - [x] install JDK as a prerequisite to installing jenkins
 - [x] Install Jenkins
-- [x] Install Docker [install docker on ubuntu](https://docs.docker.com/engine/install/ubunty)
+- [x] Install Docker [install docker on ubuntu](https://docs.docker.com/engine/install/ubuntu)
 - [x] Install Trivy
 - [x] Install kubectl as provided above
 
