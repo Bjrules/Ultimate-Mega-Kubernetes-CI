@@ -69,6 +69,7 @@ tar -zxvf helm-v3.14.0-linux-amd64.tar.gz
 sudo mv linux-amd64/helm /usr/local/bin/helm
 helm version
 ```
+---
 ### Jenkins-Server SetUp
 All these can be gotten via their official web portal
 - [x] install JDK
@@ -76,6 +77,13 @@ All these can be gotten via their official web portal
 - [x] Install Docker
 - [x] Install Trivy
 - [x] Install kubectl as provided above
+
+ On Jenkins Machine, after installing docker on the jenkins machine ensure you are runing commands as jenkins user and not as ubuntu user.
+ ```
+sudo usermod -aG docker jenkins
+newgrp docker
+Restart jenkins server using http://jenkins-ip:8080/restart to effect changes
+```
 
 > plugins required in jenkins for this project
 1. Generic Webhook Trigger
@@ -87,7 +95,27 @@ All these can be gotten via their official web portal
 7. Config File Provider
 8. Maven Integration
 9. Pipeline Maven integration
+---
+### SonarQube-Server Set-up
+- [x] Install Docker
+ Then Run SonarQube as a docker container....
+```
+docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
+sudo usermod -aG docker $USER
+newgrp docker
+```
+Then Configuration begins see Screenshots..
+---
+### Nexus-Server Set-up
+- [x] Install Docker
+Then run Nexus Image as a container...
 
+```
+docker run -d --name nexus3 -p 8081:8081 sonatype/nexus3
+sudo usermod -aG docker $USER
+newgrp docker
+```
+see ScreenShots
 
 
 
@@ -101,18 +129,9 @@ http://JENKINS_URL/generic-webhook-trigger/invoke?token=TOKEN_HERE
 http://54.234.122.198:8080/generic-webhook-trigger/invoke?token=jenkinswebhook
 
 
-docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
-sudo usermod -aG docker $USER
-newgrp docker
 
-docker run -d --name nexus3 -p 8081:8081 sonatype/nexus3
-sudo usermod -aG docker $USER
-newgrp docker
 
-### On Jenkins, after installing docker on the jenkins machine ensure you are runing commands as jenkins user and not as ubuntu user. 
-sudo usermod -aG docker jenkins
-newgrp docker
-Restart jenkins server using http://jenkins-ip:8080/restart to effect changes
+
 
 
 
