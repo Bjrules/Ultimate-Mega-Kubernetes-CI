@@ -186,6 +186,49 @@ kubectl get nodes
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_231548.png)
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_231723.png)
 
+#### Study the screenshot below and refer to the RBAC (Role Based Access Control) RBAC Directory in this Repo
+> This creates service account, role, role0binding, cluster-role, and cluster-rolebinding as well as "sceret" which will be used for authentication for the Service account.(more like password to the service account)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_000709.png)
+> get the secret so as to copy it for use in jenkins
+```
+kubectl get secret secret-name -n webapps
+```
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_003229.png)
+
+#### Configure SonarQube so as to get token to use for authentication inside jenkins
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_004407.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_004448.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_004851.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_004942.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_005251.png)
+
+
+#### Configure SonarQube webhook so as to Implement SonarQube QualityGate on the pipeline
+> kindly see jenkinsfile
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_015427.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_020907.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_021003.png)
+
+#### Configure maven-releases and maven-snapshots in Nexus NB snapshots are for lower Environment while Releases is for Higher Environment (Prod)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_021140.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_021314.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_021337.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_021433.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_021455.png)
+
+#### Configure Maven settings inside Jenkins as well
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_021636.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_021703.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_021728.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_022024.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_022233.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_022352.png)
+
+
+
+
+
+
 
 
 
