@@ -225,6 +225,35 @@ kubectl get secret secret-name -n webapps
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260221_022352.png)
 
 #### Docker Configuration with jenkins
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_022648.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_023008.png)
+
+#### This Screenshots shows the pipeline syntax with Credentials which binds credentials to variables for use so ae to use the variables for authentication into Github so as to "Update Manifest File in Ultimate Mega-Kubernetes-CD" with the latest tagging. Also kindly see the jenkinsfile for clariry
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_023940.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_024057.png)
+
+#### Configure for Email alert Notification for every Build Execution whether FAIL or SUCCESS. Also app password was generated for Authentication so that Gmail SMTP can be used to send the Emails.
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_025924.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_030016.png)
+
+[ Use this link to get your app password here.](https://myaccount.google.com/apppasswords)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_030745.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_031055.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_031507.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_031553.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_031629.png)
+
+> Test Email succesfully sent
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_031650.png)
+
+> Pipeline Progress
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_050832.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_050859.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_051036.png)
+>At this point I was Sipping my Gin&Juice.
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_051300.png)
+
+#### Configuring Generic WebHook Trigger so that the pipeline is triggered upon commit to the main Branch
 
 
 
@@ -234,8 +263,6 @@ kubectl get secret secret-name -n webapps
 
 
 
-get your app password here.
-https://myaccount.google.com/apppasswords
 
 
 Configuring webhook trigger for gitjub in jenkins.
