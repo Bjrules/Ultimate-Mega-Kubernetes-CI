@@ -174,6 +174,15 @@ eksctl create iamserviceaccount \
     kubectlget pods -n kube-system
    ```
    #### to confirm
+   # update Kubeconfig so as to be able to connect to my cluster
+ ```
+aws eks --region us-east-1 update-kubeconfig --name bb-cluster
+```
+#### Then
+```
+kubectl get nodes
+```
+#### to confirm that I am now able to connect to the Cluster
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_231548.png)
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_231723.png)
 
