@@ -224,7 +224,7 @@ kubectl get secret secret-name -n webapps
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260221_022233.png)
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260221_022352.png)
 
-
+#### Docker Configuration with jenkins
 
 
 
