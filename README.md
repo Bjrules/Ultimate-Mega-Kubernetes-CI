@@ -330,7 +330,7 @@ kubectl get ingress -n webapps
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260222_095249.png)
 
 
-#THANK YOU.
+#   THANK YOU.
 
 
 
