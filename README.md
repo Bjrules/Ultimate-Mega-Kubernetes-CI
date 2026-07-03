@@ -254,20 +254,92 @@ kubectl get secret secret-name -n webapps
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260221_051300.png)
 
 #### Configuring Generic WebHook Trigger so that the pipeline is triggered upon commit to the main Branch
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_053130.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_053339.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_053622.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_053759.png)
+> configure webhooks in Github by setting the payload URL
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_054809.png)
+> ping
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_055150.png)
+>Webhook  trigger works when a commit is made to the main branch
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_055551.png)
 
-
-
-
-
-
-
-
-
-
-
-Configuring webhook trigger for gitjub in jenkins.
+Configuring webhook trigger for github in jenkins (Use the Format Below)
 http://JENKINS_URL/generic-webhook-trigger/invoke?token=TOKEN_HERE
+
 http://54.234.122.198:8080/generic-webhook-trigger/invoke?token=jenkinswebhook
+---
+
+### SonarQube Server Showing The Bugs, Code Smells , Vulnerability etc of the Application to be Deployed.
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_062333.png)
+
+---
+
+## Continous Delivery/Deployment Configuration in jenkins
+
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_065923.png)
+>Kubernetes secret text  "k8-token"  was that which I created alongside the service account see RBAC/rbac.md for details. Also Server Enpoint can be gitten from Aws Account. webapps namespace was also configured
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_070005.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_070704.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_070736.png)
+
+>  Install Nginx Ingress Controller to handle traffic into your cluster
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+```
+> jenkins pipeline for the Deployment
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_132754.png)
+
+>   Check for the success of ingress controller installation
+```
+kubectl get pods -n ingress-nginx
+```
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_132905.png)
+
+> Install cert manager and check if it's running
+```
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml
+
+kubectl get pods -n cert-manager
+```
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_133048.png)
+
+> CD Pipeline for App Deployments..... SUCCESSFUL
+
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_142037.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_152649.png)
+
+> Applying ingress.yaml seperatly from the terminal and not from the pipeline
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_153512.png)
+
+> Get ingress so as to get the LB public address
+```
+kubectl get ingress -n webapps
+```
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_153724.png)
+
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_160707.png)
+>    get certificates
+![alt text](IMG_SCREENSHOTS/Screenshot_20260221_162803.png)
+
+
+***TROUBLESHOOT CERTIFICATE***
+![alt text](IMG_SCREENSHOTS/Screenshot_20260222_095216.png)
+
+![alt text](IMG_SCREENSHOTS/Screenshot_20260222_095249.png)
+
+
+#THANK YOU.
+
+
+
+
+
+
+
+
+
 
 
 
