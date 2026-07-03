@@ -166,8 +166,12 @@ eksctl create iamserviceaccount \
 
   ```
   > This command  creates  pods for the ebs-csi-driver which will be needed for creating volumes and should able to attach the volumes to the worker nodes when it is needed
-  ``` kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/ecr/?ref=release-1.11" ```
-  #### use  ``` `kubectlget pods -n kube-system`  ``` to confirm
+  ``` kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/ecr/?ref=release-1.11"
+   ```
+  #### use 
+   ``` kubectlget pods -n kube-system
+   ```
+   #### to confirm
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_231548.png)
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_231723.png)
 
