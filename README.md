@@ -122,24 +122,55 @@ See Screenshots
 >Opened ports in Inboud Rules of Security Group
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_193603.png)
 
->Create an IAM Access key for aws configure on infra-server
+ #### Create an IAM Access key for aws configure on infra-server
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_202542.png)
 
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_202958.png)
 
-> Installed Docker and pull/run Docker Image/Container of both Nexus and Sonarqube on their respective Machines.
+ #### Installed Docker and pull/run Docker Image/Container of both Nexus and Sonarqube on their respective Machines.
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_210915.png)
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_211309.png)
 > Getting the password for Nexus by logging into the container 
 ``` docker exex -it container_id /bin/bash ```
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_212018.png)
 
-#### Nexus and SonarQube Interfaces (sonarqubedefault username and password admin:admin)
+#### Nexus and SonarQube Interfaces (sonarqube default username and password admin:admin)
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_212144.png)
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_212249.png)
 
 #### installation of Docker on jenkins Machine
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_205725.png)
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_213126.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_213126.png)
+
+> Ensure that jenkins is added to the docker group
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_214002.png)
+> Restart Jenkins
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_213742.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_205725.png)
+
+``` terraform init ``` On infra-server, so as to provision kubernetes using the Terraform EKS Module
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_221018.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_222237.png)
+
+#### create a Service Account that will enable us to able create resources such as EBS volumes using ekctl which uses aws Cloud formation.
+```
+eksctl create iamserviceaccount \
+  --region us-east-1 \
+  --name ebs-csi-controller-sa \
+  --namespace kube-system \
+  --cluster bb-cluster \
+  --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy \
+  --approve \
+  --override-existing-serviceaccounts
+
+  ```
+  > This command  creates  pods for the ebs-csi-driver which will be needed for creating volumes and should able to attach the volumes to the worker nodes when it is needed
+  ``` kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/ecr/?ref=release-1.11" ```
+  #### use  ``` `kubectlget pods -n kube-system`  ``` to confirm
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_231548.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260220_231723.png)
+
 
 
 
