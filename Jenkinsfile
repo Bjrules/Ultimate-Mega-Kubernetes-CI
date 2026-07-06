@@ -98,7 +98,7 @@ pipeline {
                 }
             }
         }
-        
+//   
         stage('Update Manifest File in Ultimate Mega-Kubernetes-CD') {
             steps {
                 script {
