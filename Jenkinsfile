@@ -98,7 +98,8 @@ pipeline {
                 }
             }
         }
-//  This is a comments
+// Here, the use of variable password comes to play so as to be able to:
+//  loggin to Github, clone the CD repo, Update by writing to the manifest.yaml file then push back to the Github.
         stage('Update Manifest File in Ultimate Mega-Kubernetes-CD') {
             steps {
                 script {
