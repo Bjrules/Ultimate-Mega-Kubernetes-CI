@@ -171,7 +171,7 @@ eksctl create iamserviceaccount \
    ```
   #### use 
    ```
-    kubectlget pods -n kube-system
+    kubectl get pods -n kube-system
    ```
    #### to confirm
    # update Kubeconfig so as to be able to connect to my cluster
@@ -336,6 +336,18 @@ kubectl get ingress -n webapps
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260710-145248.png)
 #   THANK YOU.
 
+
+## Some useful Kubernetes commands
+```
+kubectl get nodes
+kubectl get namespace
+kubectl get pods -n kube-system
+kubectl get secret -A -n webapps
+kubectl describe pod bankapp -n webapps
+describe deployment bankapp -n webapps
+kubectl get pods -n webapps
+
+```
 
 
 
