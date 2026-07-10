@@ -346,6 +346,7 @@ kubectl get secret -A -n webapps
 kubectl describe pod bankapp -n webapps
 describe deployment bankapp -n webapps
 kubectl get pods -n webapps
+kubectl get pods -n cert-manager
 
 ```
 
