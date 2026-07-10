@@ -325,11 +325,15 @@ kubectl get ingress -n webapps
 
 
 ***TROUBLESHOOT CERTIFICATE***
+##### certificate Errors were due to the ingress rules in (ingress.yaml) and tls host which was www.bbprojects.space instead of the domain www.bbproject.space which was purchased from Namecheap.com and preconfigured with DNS CNAME address
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260222_095216.png)
 
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260222_095249.png)
 
-
+##### After the correction www.bbproject.space works........  BRAVO!!!
+![alt text](IMG_SCREENSHOTS/Screenshot_20260710_144937.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260710_152708.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260710-145248.png)
 #   THANK YOU.
 
 
