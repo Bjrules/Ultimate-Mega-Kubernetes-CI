@@ -37,27 +37,27 @@ pipeline {
             }
         }
 //Remember to have Configured SonarQube server in jenkins  
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('sonarq') {
-                    sh '''
-                        $SCANNER_HOME/bin/sonar-scanner \
-                        -Dsonar.projectKey=gcbank \
-                        -Dsonar.projectName=gcbank \
-                        -Dsonar.java.binaries=target
-                    '''
-                }
-            }
-        }
+        // stage('SonarQube Analysis') {
+        //     steps {
+        //         withSonarQubeEnv('sonarq') {
+        //             sh '''
+        //                 $SCANNER_HOME/bin/sonar-scanner \
+        //                 -Dsonar.projectKey=gcbank \
+        //                 -Dsonar.projectName=gcbank \
+        //                 -Dsonar.java.binaries=target
+        //             '''
+        //         }
+        //     }
+        // }
 // Perform QualityGate Check
 // To perform QualityGate, firstly make sure that you had configure and create webhook in SonarQube server using jenkins URL (see sceenshots)
-        stage('Quality Gate Check') {
-            steps { 
-                timeout(time: 1, unit: 'HOURS') {
-                    waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
-                }
-            }
-        }
+        // stage('Quality Gate Check') {
+        //     steps { 
+        //         timeout(time: 1, unit: 'HOURS') {
+        //             waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
+        //         }
+        //     }
+        // }
         
         stage('Build') {
             steps {
@@ -65,13 +65,13 @@ pipeline {
             }
         }
         
-        stage('Publish To Nexus') {
-            steps {
-                withMaven(globalMavenSettingsConfig: 'BB-project', maven: 'Maven3', traceability: true) {
-                        sh "mvn deploy"
-                }
-            }
-        }
+        // stage('Publish To Nexus') {
+        //     steps {
+        //         withMaven(globalMavenSettingsConfig: 'BB-project', maven: 'Maven3', traceability: true) {
+        //                 sh "mvn deploy"
+        //         }
+        //     }
+        // }
         
         stage('Docker Image Build & Tag') {
             steps {
