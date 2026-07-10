@@ -7,7 +7,7 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: jenkins-sa
+  name: jenkins
   namespace: webapps
 ```
 
@@ -137,6 +137,7 @@ subjects:
    - `clusterrolebinding.yaml`
 
 2. Apply them in the following order:
+> Note that the namespace were they are to be deployed (webapps) is already defined  in the yaml file during creation so no need to specify it during kubectl apply. 
    ```bash
    kubectl apply -f serviceaccount.yaml
    kubectl apply -f role.yaml
@@ -155,13 +156,22 @@ subjects:
 ### Generate token using service account in the namespace
 [Create Token](https://kubernetes.io/docs/concepts/configuration/secret/)
 
+```
+kubectl apply -f secret-file.yaml -n webapps
+```
+
 ```yaml
 apiVersion: v1
 kind: Secret
 metadata:
-  name: jenkins-sa-secret
+  name: sa-secret
   annotations:
-    kubernetes.io/service-account.name: "jenkins-sa"
+    kubernetes.io/service-account.name: "jenkins"
 type: kubernetes.io/service-account-token
 
 ```
+#### kindly get the token using this command
+```
+kubectl describe secret sa-secret -n webapps
+```
+#### copy the token as it will be used for Jenkins-Kubernetes Authentication later.kindly refer to the jenkinsfile of the Ultimate-Mega-Kubernetes-CD Repo
