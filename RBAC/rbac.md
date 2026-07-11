@@ -175,3 +175,4 @@ type: kubernetes.io/service-account-token
 kubectl describe secret sa-secret -n webapps
 ```
 #### copy the token as it will be used for Jenkins-Kubernetes Authentication later.kindly refer to the jenkinsfile of the Ultimate-Mega-Kubernetes-CD Repo
+> See ScreeShots
