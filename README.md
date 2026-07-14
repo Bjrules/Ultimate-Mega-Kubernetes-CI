@@ -334,6 +334,11 @@ kubectl get ingress -n webapps
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260710_144937.png)
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260710_152708.png)
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260710-145248.png)
+
+## OBSERVABILITY/MONITORING
+#### using helm to install Prometheus and Grafana to monitor the Entire cluster
+
+
 #   THANK YOU.
 
 
@@ -350,6 +355,7 @@ kubectl get pods -n cert-manager
 kubectl get sa -n kube-system
 
 ```
+
 
 
 
