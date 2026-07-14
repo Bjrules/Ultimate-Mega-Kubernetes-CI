@@ -336,7 +336,16 @@ kubectl get ingress -n webapps
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260710-145248.png)
 
 ## OBSERVABILITY/MONITORING
-#### using helm to install Prometheus and Grafana to monitor the Entire cluster
+#### using helm to install Prometheus and Grafana to monitor the entire bb-cluster
+```
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts 
+
+helm repo update
+```
+> Adding the repo
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_030527.png)
+> Updadate the repo
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_035304.png)
 
 
 #   THANK YOU.
