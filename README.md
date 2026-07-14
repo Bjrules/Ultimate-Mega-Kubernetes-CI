@@ -347,6 +347,44 @@ helm repo update
 > Updadate the repo
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260714_035304.png)
 
+> yaml definition for Prometheus,Grafana and exporters  observe/values.yml
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_035501.png)
+
+> helm update command to install prometheus Grafana and the exporters 
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_035919.png)
+```
+helm upgrade --install monitoring prometheus-community/kube-prometheus-stack -f values.yaml -n monitoring --create-namespace
+```
+- helm upgrade --install : If the package is installed then, update it otherwise install 
+- monitoring :  Release Name
+- prometheus-community/kube-prometheus-stack :  This is the repo for the package
+- values.yml : the yaml file where the definitions for prometheus, grafana and the exporter are which i created earlier.
+- -n monitoring --create-namespace : values.yml should be deployed into monitoring namespace and if the namespace does not exist the, create it and deploy it thereafter
+
+> "kubectl get all -n monitoring" shows that only grafana can be accessed externaly(LoadBalancer) thus the need to patch 
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_040137.png)
+
+```
+kubectl patch svc monitoring-kube-prometheus-prometheus -n monitoring -p '{"spec": {"type": "LoadBalancer"}}'
+kubectl patch svc monitoring-kube-state-metrics -n monitoring -p '{"spec": {"type": "LoadBalancer"}}'
+kubectl patch svc monitoring-prometheus-node-exporter -n monitoring -p '{"spec": {"type": "LoadBalancer"}}'
+
+```
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_040418.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_040500.png)
+
+>Grafana on http://<External-LoadBalancer-Address>
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_041101.png)
+> Prometheus
+
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_041134.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_041420.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_041639.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_042011.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_042049.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_043144.png)
+![alt text](IMG_SCREENSHOTS/Screenshot_20260714_043631.png)
+
 
 #   THANK YOU.
 
