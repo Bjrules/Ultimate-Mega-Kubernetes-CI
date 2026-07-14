@@ -131,7 +131,8 @@ See Screenshots
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_210915.png)
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_211309.png)
 > Getting the password for Nexus by logging into the container 
-``` docker exex -it container_id /bin/bash ```
+``` docker exex -it container_id /bin/bash 
+```
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260220_212018.png)
 
 #### Nexus and SonarQube Interfaces (sonarqube default username and password admin:admin)
@@ -203,7 +204,7 @@ kubectl get secret secret-name -n webapps
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260221_005251.png)
 
 
-#### Configure SonarQube webhook so as to Implement SonarQube QualityGate on the pipeline
+#### Configure SonarQube webhook so as to Implement SonarQube QualityGate on the pipeline [Sonarqube Token] squ_583c4f8db698e2a14aeb17d54da7d00b413a9e52
 > kindly see jenkinsfile
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260221_015427.png)
 ![alt text](IMG_SCREENSHOTS/Screenshot_20260221_020907.png)
