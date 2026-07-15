@@ -360,7 +360,7 @@ helm upgrade --install monitoring prometheus-community/kube-prometheus-stack -f 
 ```
 - helm upgrade --install : If the package is installed then, update it otherwise install 
 - monitoring :  Release Name
-- prometheus-community/kube-prometheus-stack :  This is the repo for the package
+- prometheus-community/kube-prometheus-stack :  This is the Repo and Chart for prometheus package
 - values.yml : the yaml file where the definitions for prometheus, grafana and the exporter are which i created earlier.
 - -n monitoring --create-namespace : values.yml should be deployed into monitoring namespace and if the namespace does not exist the, create it and deploy it thereafter
 
