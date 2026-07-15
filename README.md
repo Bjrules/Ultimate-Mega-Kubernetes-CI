@@ -2,7 +2,7 @@
 ## Project Description:
 >This Project implements an End-2-End DevSecOps Automation CI/CD(jenkins) which Deploys a Java Application(Bank App) to kubernetes(Encompassing all major DevOps Tools). It clones, compiles, tests, Performs Security Scanning(trivy) as well as generates reports. It also Scan for bugs and vulnerability using SonarQube and performs QualityGate Check for the purpose of Quality of the Software. It further packages and Deploy the artifacts to Nexus Server which has been pre-configured in jenkins. furthermore, it builds and push to dockerhub with dynamic tagging. Another Interesting part is that, this project also updates the CD Repository [https://github.com/Bjrules/Ultimate-Mega-Kubernetes-CD.git] with the latest build tag Number from jenkins on togithub for latest version for the next Deployment .It also sends a Email on each build whether SUCCESSFUL or FAILED BUILDS. Finally it also deploys Prometheus and Grafana and Exporters for Monitoring
 
-![alt text](MEGA-PROJECT-MANY-TOOLS-CICD.drawio.png)
+![alt text](MEGA-PROJECT-CICD.drawio.png)
 ---
 
 ## Step1.  Setup Jenkins-Server for (CI Pipeline) and Infrastructure-Server (for Kubernetes Deployments) 
